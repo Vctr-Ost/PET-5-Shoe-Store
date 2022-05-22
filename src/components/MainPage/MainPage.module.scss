@@ -1,0 +1,113 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+
+  .content {
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 0 35px;
+
+      h1 {
+        font-size: 32px;
+        line-height: 39px;
+      }
+
+      .search {
+        padding: 10px 15px;
+        border: 3px solid #F3F3F3;
+        border-radius: 10px;
+
+        img {
+          margin: 0 10px 0 0;
+        }
+
+        input {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .store {
+      display: flex;
+      margin: -15px;
+      flex-wrap: wrap;
+
+      .item {
+        padding: 15px;
+        flex: 0 1 25%;
+
+        .itemContent {
+          border: 3px solid #F3F3F3;
+          border-radius: 40px;
+          display: flex;
+          flex-direction: column;
+          padding: 20px 30px 40px;
+          min-height: 100%;
+          position: relative;
+          transition-duration: 0.2s;
+
+          .like {
+            position: absolute;
+            height: 32px;
+            width: 32px;
+            object-fit: cover;
+            z-index: 1;
+
+            &:hover {
+
+            }
+          }
+
+          .imgBlock {
+            height: 0;
+            padding-top: 82%;
+            position: relative;
+            display: block;
+            margin: 0 0 12px;
+
+            img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              max-height: 100%;
+              max-width: 100%;
+            }
+          }
+
+          .itemName {
+            font-weight: 400;
+            margin: 0 0 12px;
+            flex: 1 1 auto;
+          }
+
+          .priceBlock {
+            display: flex;
+            justify-content: space-between;
+
+            .priceName {
+              font-weight: 500;
+              font-size: 13px;
+              text-transform: uppercase;
+              color: #BDBDBD;
+              margin: 0 0 2px;
+            }
+
+            button {
+              width: 32px;
+              height: 32px;
+              background: #FFFFFF;
+            }
+          }
+
+          &:hover {
+            box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.1);
+            transform: translate(0, -10px);
+          }
+        }
+      }
+    }
+  }
+}

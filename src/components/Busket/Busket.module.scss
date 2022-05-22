@@ -1,0 +1,153 @@
+.overlay {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+
+  .busket {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 420px;
+    background: #FFFFFF;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      margin: 0 0 30px;
+    }
+
+    .closeBusket {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      height: 35px;
+      width: 35px;
+      opacity: 0.5;
+      cursor: pointer;
+      transition-duration: 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .busketItems {
+      flex: 1 1 auto;
+      overflow: auto;
+      margin: 0 -30px 30px 0;
+      padding: 0 30px 0 0;
+
+      .busketItem {
+        display: flex;
+        padding: 17px 20px;
+        border: 2px solid #F3F3F3;
+        border-radius: 20px;
+        margin: 0 0 20px;
+        align-items: center;
+
+        .imgBlock {
+          width: 70px;
+          min-height: 70px;
+          object-fit: cover;
+          overflow: hidden;
+          margin: 0 15px 0 0;
+          flex: 0 0 70px;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        .body {
+          flex: 1 1 auto;
+          margin: 0 10px 0 0;
+
+          .busketHeader {
+            font-weight: 400;
+            margin: 0 0 8px;
+            font-size: 16px;
+          }
+
+          .busketPrice {
+            font-size: 15px;
+            letter-spacing: 0.5px;
+          }
+        }
+
+        button {
+          flex: 0 0 32px;
+          width: 32px;
+          height: 32px;
+          border-radius: 8px;
+          opacity: 0.5;
+          transition-duration: 0.2s;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .priceBlock {
+      margin: 0 0 25px;
+
+      .priceName {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 19px;
+      }
+
+      .priceCount {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 19px;
+        letter-spacing: 0.5px;
+        float: right;
+      }
+    }
+
+    .btnAccept {
+      position: relative;
+      width: 100%;
+      height: 55px;
+      background: #89c046;
+      border-radius: 18px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #f8f8f8;
+      letter-spacing: 2px;
+      transition-duration: 0.15s;
+
+      img {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-40px, -50%);
+        transition-duration: 0.15s;
+      }
+
+      &:hover {
+        background: #70ad23;
+        img {
+          transform: translate(-35px, -50%);
+        }
+      }
+      &:active {
+        background: #50880a;
+      }
+    }
+  }
+}

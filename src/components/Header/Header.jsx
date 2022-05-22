@@ -1,18 +1,20 @@
+import style from './Header.module.scss'
+
 export default function Header() {
     return (
-        <div className='container'>
+        <div className={style.container}>
             <header>
-                <div className='headerLeft'>
-                    <img className='logo' src='/img/header/logo.svg'/>
+                <div className={style.headerLeft}>
+                    <img className={style.logo} src='/img/header/logo.svg'/>
                     <div>
-                        <h3 className='headerTitle'>shoe store</h3>
-                        <p className='headerSubTitle'>Магазин кращих шузів</p>
+                        <h3 className={style.headerTitle}>shoe store</h3>
+                        <p className={style.headerSubTitle}>Магазин кращих шузів</p>
                     </div>
                 </div>
-                <ul className='headerRight'>
+                <ul className={style.headerRight}>
                     <li>
-                        <img className='mmr' src='/img/header/basket.svg'/>
-                        <span className='hSpan'>1205 UAH</span>
+                        <img className={style.mmr} src='/img/header/basket.svg'/>
+                        <span className={style.hSpan}>1205 UAH</span>
                     </li>
                     <li>
                         <img src='/img/header/favor.svg'/>
