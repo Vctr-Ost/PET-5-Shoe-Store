@@ -1,6 +1,6 @@
 import style from './Header.module.scss'
 
-export default function Header() {
+export default function Header(props) {
     return (
         <div className={style.container}>
             <header>
@@ -12,7 +12,7 @@ export default function Header() {
                     </div>
                 </div>
                 <ul className={style.headerRight}>
-                    <li>
+                    <li onClick={props.showBusket}>
                         <img className={style.mmr} src='/img/header/basket.svg'/>
                         <span className={style.hSpan}>1205 UAH</span>
                     </li>

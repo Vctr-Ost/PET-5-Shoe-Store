@@ -1,5 +1,5 @@
 .overlay {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0;
   left: 0;
@@ -8,7 +8,7 @@
   background: rgba(0, 0, 0, 0.7);
 
   .busket {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     height: 100%;
@@ -85,7 +85,7 @@
           }
         }
 
-        button {
+        .delButton {
           flex: 0 0 32px;
           width: 32px;
           height: 32px;

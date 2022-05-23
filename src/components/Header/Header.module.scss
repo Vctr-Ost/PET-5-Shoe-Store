@@ -35,6 +35,11 @@
       display: flex;
       align-items: center;
 
+      li {
+        cursor: pointer;
+        padding: 10px;
+      }
+
       li:not(:last-child) {
         margin: 0 30px 0 0;
 

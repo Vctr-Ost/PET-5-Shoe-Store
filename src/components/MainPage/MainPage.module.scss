@@ -33,6 +33,7 @@
       display: flex;
       margin: -15px;
       flex-wrap: wrap;
+      padding: 0 0 30px;
 
       .item {
         padding: 15px;
@@ -54,9 +55,12 @@
             width: 32px;
             object-fit: cover;
             z-index: 1;
+            cursor: pointer;
+            transition-duration: 0.2s;
 
             &:hover {
-
+              height: 36px;
+              width: 36px;
             }
           }
 

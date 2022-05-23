@@ -2,6 +2,9 @@ import Card from "./Card/Card";
 import style from './MainPage.module.scss';
 
 export default function MainPage(props) {
+    let showItems = props.obj.map(item => <Card name={item.name} price={item.price} src={item.src}
+                                                addToCart={props.addToCart}/>)
+
     return (
         <div className={style.container}>
             <div className={style.content}>
@@ -13,7 +16,7 @@ export default function MainPage(props) {
                     </div>
                 </div>
                 <div className={style.store}>
-                    <Card {...props}/>
+                    {showItems}
                 </div>
             </div>
         </div>

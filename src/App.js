@@ -1,21 +1,43 @@
 import Header from "./components/Header/Header";
 import MainPage from "./components/MainPage/MainPage";
 import Busket from "./components/Busket/Busket";
+import {useEffect, useState} from "react";
+import {getItems} from "./components/api/api";
 
-const arr = [
-    {name: 'Чоловічі Кросівки Nike Blazer Mid Suede', price: 3250, src: '/img/content/shoes/1.jpg'},
-    {name: 'Чоловічі Кросівки Nike Air Max 270', price: 5400, src: '/img/content/shoes/2.jpg'},
-    {name: 'Чоловічі Кросівки Nike Blazer Mid Suede', price: 6100, src: '/img/content/shoes/3.jpg'},
-    {name: 'Кросівки Puma X Aka Boku Future Rider', price: 825, src: '/img/content/shoes/4.jpg'},
-];
 
 function App() {
+
+    const [busketOpened, setBusketOpened] = useState(false);
+    const onBusketAction = () => {
+        setBusketOpened(!busketOpened)
+    }
+
+
+    const [allItems, setAllItems] = useState([]);
+    useEffect(() => {
+        getItems(setAllItems)
+    }, []);
+
+
+    const [busket, setBusket] = useState([]);
+    const addToCart = (item) => {
+        setBusket([...busket, item]);
+    }
+    const delFromCart = (name) => {
+        const NewBusket = busket.filter(item => {
+            if (item.name !== name) return true;
+            else return false;
+        });
+        setBusket(NewBusket);
+    }
+
+
     return (
         <div className='wrapper'>
-            <Busket/>
-
-            <Header/>
-            <MainPage obj={arr}/>
+            {busketOpened ? <Busket showBusket={onBusketAction} busketItems={busket}
+                                    delFromCart={delFromCart}/> : null}
+            <Header showBusket={onBusketAction}/>
+            <MainPage obj={allItems} addToCart={addToCart}/>
 
         </div>
     );
