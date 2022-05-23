@@ -2,7 +2,7 @@ import Header from "./components/Header/Header";
 import MainPage from "./components/MainPage/MainPage";
 import Busket from "./components/Busket/Busket";
 import {useEffect, useState} from "react";
-import {getItems} from "./components/api/api";
+import {addToBusket, delFromBasket, getBusket, getItems} from "./components/api/api";
 
 
 function App() {
@@ -15,20 +15,25 @@ function App() {
 
     const [allItems, setAllItems] = useState([]);
     useEffect(() => {
-        getItems(setAllItems)
+        getItems(setAllItems);
+        getBusket(setBusket);
     }, []);
 
 
     const [busket, setBusket] = useState([]);
     const addToCart = (item) => {
+        addToBusket(item);
         setBusket([...busket, item]);
     }
-    const delFromCart = (name) => {
-        const NewBusket = busket.filter(item => {
-            if (item.name !== name) return true;
-            else return false;
-        });
-        setBusket(NewBusket);
+    const delFromCart = (id) => {
+        delFromBasket(id);
+        setBusket(prev => prev.filter(item => item.id !== id));
+    };
+
+
+    const [searchValue, setSearchValue] = useState('');
+    const onSearchInput = (event) => {
+        setSearchValue(event.target.value)
     }
 
 
@@ -37,7 +42,8 @@ function App() {
             {busketOpened ? <Busket showBusket={onBusketAction} busketItems={busket}
                                     delFromCart={delFromCart}/> : null}
             <Header showBusket={onBusketAction}/>
-            <MainPage obj={allItems} addToCart={addToCart}/>
+            <MainPage obj={allItems} addToCart={addToCart} searchValue={searchValue} setSearchValue={setSearchValue}
+                      onSearchInput={onSearchInput}/>
 
         </div>
     );
