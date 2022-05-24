@@ -2,9 +2,10 @@ import Card from "./Card/Card";
 import style from './MainPage.module.scss';
 
 export default function MainPage(props) {
-    let showItems = props.obj.filter(item => item.name.toLowerCase().includes(props.searchValue.toLowerCase())).map(item =>
-        <Card key={item.src} name={item.name}
-              price={item.price} src={item.src} addToCart={props.addToCart}/>)
+    let showItems = props.obj.filter(i => i.name.toLowerCase().includes(props.searchValue.toLowerCase())).map(item =>
+        <Card key={item.id} item={item} changeItemInBusket={props.changeItemInBusket}
+              changeFav={props.changeFav}/>
+    )
 
     return (
         <div className={style.container}>

@@ -47,6 +47,70 @@
       margin: 0 -30px 30px 0;
       padding: 0 30px 0 0;
 
+
+      .clearBusket {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .clearImg {
+          height: 160px;
+          width: 160px;
+          display: block;
+          margin: 0 auto 30px;
+        }
+
+        .clearP {
+          text-align: center;
+          font-weight: 600;
+          font-size: 22px;
+          color: #000000;
+          margin: 0 0 20px;
+        }
+
+        .clearBtn {
+          position: relative;
+          background: #9DD458;
+          border-radius: 18px;
+          width: 265px;
+          height: 55px;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+          color: #f8f8f8;
+          letter-spacing: 2px;
+          transition-duration: 0.15s;
+
+
+          span {
+            padding: 0 0 0 35px;
+          }
+
+          img {
+            position: absolute;
+            top: 50%;
+            left: 25px;
+            transform: translate(0, -50%) rotate(180deg);
+            transition-duration: 0.15s;
+          }
+
+          &:hover {
+            background: #70ad23;
+
+            img {
+              transform: translate(-5px, -50%)  rotate(180deg);
+            }
+          }
+
+          &:active {
+            background: #50880a;
+          }
+
+        }
+      }
+
+
       .busketItem {
         display: flex;
         padding: 17px 20px;
@@ -141,10 +205,12 @@
 
       &:hover {
         background: #70ad23;
+
         img {
           transform: translate(-35px, -50%);
         }
       }
+
       &:active {
         background: #50880a;
       }

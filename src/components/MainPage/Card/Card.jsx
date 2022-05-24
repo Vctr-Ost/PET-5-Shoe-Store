@@ -2,33 +2,29 @@ import style from '../MainPage.module.scss';
 import {useState} from "react";
 
 export default function Card(props) {
-    const [isAdded, setIsAdded] = useState(false);
-    const onAddClick = (item) => {
-        setIsAdded(!isAdded);
-
-        props.addToCart({name: item.name, price: item.price, src: item.src})
-    };
+    // debugger
 
     const [isLiked, setIsLiked] = useState(false);
-    const onLikeClick = () => {setIsLiked(!isLiked)};
+    const onLikeClick = () => {
+        setIsLiked(!isLiked)
+    };
 
     return (
         <div className={style.item}>
             <div className={style.itemContent}>
-                <img className={style.like} onClick={onLikeClick}
-                     src={isLiked ? '/img/content/like.svg' : '/img/content/unlike.svg'}/>
+                <img className={style.like} onClick={() => props.changeFav(props.item)}
+                     src={props.item.isFav ? '/img/content/like.svg' : '/img/content/unlike.svg'}/>
                 <div className={style.imgBlock}>
-                    <img src={props.src}/>
+                    <img src={props.item.src}/>
                 </div>
-                <p className={style.itemName}>{props.name}</p>
+                <p className={style.itemName}>{props.item.name}</p>
                 <div className={style.priceBlock}>
                     <div>
                         <p className={style.priceName}>Ціна:</p>
-                        <p className={style.count}>{props.price} UAH</p>
+                        <p className={style.count}>{props.item.price} UAH</p>
                     </div>
-                    <button onClick={() => onAddClick(props)}>
-                        <img src={isAdded ? '/img/content/added.svg' : '/img/content/add.svg'}/>
-                    </button>
+                    <img className={style.addToBusketImg} onClick={() => props.changeItemInBusket(props.item)}
+                         src={props.item.isInBusket ? '/img/content/added.svg' : '/img/content/add.svg'}/>
                 </div>
             </div>
         </div>
