@@ -1,5 +1,7 @@
 import style from '../MainPage/MainPage.module.scss';
+import s from './Favor.module.scss';
 import Card from "../MainPage/Card/Card";
+import {Link} from "react-router-dom";
 
 export default function Favor(props) {
 
@@ -16,8 +18,15 @@ export default function Favor(props) {
                 </div>
                 <div className={style.store}>
                     {showItems.length === 0
-                        ? <div>
-
+                        ? <div className={s.fav}>
+                            <img className={s.favImg} src='/img/favor/emojiFavor.jpg'/>
+                            <h2 className={s.favHead}>Закладок ще немає :(</h2>
+                            <Link to='/'>
+                                <button className={s.clearBtn} onClick={props.showBusket}>
+                                    <span className={s.clearBtnSpan}>Повернутися назад</span>
+                                    <img className={s.clearBtnImg} src='/img/basket/arrow.svg'/>
+                                </button>
+                            </Link>
                         </div>
                         : showItems
                     }

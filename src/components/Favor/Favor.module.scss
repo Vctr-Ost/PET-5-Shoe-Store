@@ -1,0 +1,59 @@
+.fav {
+  position: relative;
+  top: 120px;
+  margin: 0 auto;
+
+  .favImg {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  .favHead {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin: 0 0 25px;
+  }
+
+  .clearBtn {
+    position: relative;
+    background: #9DD458;
+    border-radius: 18px;
+    width: 265px;
+    height: 55px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #f8f8f8;
+    letter-spacing: 2px;
+    transition-duration: 0.15s;
+
+
+    span {
+      padding: 0 0 0 35px;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 25px;
+      transform: translate(0, -50%) rotate(180deg);
+      transition-duration: 0.15s;
+    }
+
+    &:hover {
+      background: #70ad23;
+
+      img {
+        transform: translate(-5px, -50%)  rotate(180deg);
+      }
+    }
+
+    &:active {
+      background: #50880a;
+    }
+  }
+}

@@ -43,7 +43,8 @@ export default function Busket(props) {
                             <span className={style.priceCount}>{props.totalAmount} UAH</span>
                         </div>
                         <div>
-                            <button className={style.btnAccept}>
+                            <button className={style.btnAccept}
+                                    onClick={() => {alert("Дякуємо за замовлення :))")}}>
                                 Оформити замовлення
                                 <img src='/img/basket/arrow.svg'/>
                             </button>
