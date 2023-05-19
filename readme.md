@@ -1,3 +1,3 @@
 # Shoe Store on React
 
-Archakov Blog yoitube channel
+Archakov Blog youtube channel
